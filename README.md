@@ -1,16 +1,22 @@
-# Getting Started with Create React App
+# 💼 Employee Management System
 
-# 💼 Employee Management Form
-
-This React project features a responsive, accessible employee form that allows users to add new employees to a system. It was built as part of an assignment focused on form handling, component organization, styling, and accessibility best practices.
+This React project features a responsive, accessible employee form and dynamic employee list. Built as part of a multi-week assignment, it demonstrates form handling, component organization, styling, validation, and persistent data storage using `localStorage`.
 
 ## 🧩 Features
 
 - Fully controlled form using `useState`
 - Input fields for name, email, position, department, salary, and start date
+- Validation logic for:
+  - Required fields
+  - Positive salary values
+  - No future start dates
+  - No duplicate emails
+  - Name field restricted to letters, spaces, hyphens, and apostrophes
+- Dynamic Employee List component that displays saved entries
+- Persistent data storage using `localStorage`
 - Responsive card-style layout using custom CSS
 - Keyboard and screen reader-friendly
-- Clean, accessible form structure with required fields
+- Clean, accessible form structure
 
 ## 🚀 Getting Started
 
@@ -22,14 +28,18 @@ cd employee-management
 npm install
 npm start
 
-Folder Structure:
+Folder Structure
+
 employee-management/
 ├── src/
 │   ├── components/
-│   │   └── EmployeeForm.js
-│   └── EmployeeForm.css
+│   │   ├── EmployeeForm.js
+│   │   └── EmployeeList.js
+│   ├── EmployeeForm.css
+│   └── EmployeeList.css
 ├── App.js
 ├── index.js
 └── README.md
-✍️ Author
-Built by Kier Turpin — developer, designer, and accessibility advocate. 📍 GitHub Profile
+
+Author
+Built by Kier Turpin — developer, designer, and accessibility advocate. GitHub Profile: https://github.com/2Kier16
