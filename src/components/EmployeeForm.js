@@ -25,11 +25,49 @@ useEffect(() => {
 }, []);
 
 const handleSubmit = (e) => {
-    e.preventDefault();
-    localStorage.setItem('employeeData', JSON.stringify(formData));
-    console.log('Submitted Employee:', formData);
-};
+  e.preventDefault();
 
+  // Basic validation
+  const nameRegex = /^[a-zA-Z\s'-]+$/;
+  if (!nameRegex.test(formData.name)) {
+    alert("Name can only contain letters, spaces, hyphens, and apostrophes.");
+    return;
+  }
+
+  if (formData.salary <= 0) {
+    alert("Salary must be a positive number.");
+    return;
+  }
+
+  const today = new Date();
+  const startDate = new Date(formData.startDate);
+  if (startDate > today) {
+    alert("Start date cannot be in the future.");
+    return;
+  }
+
+  const existingData = JSON.parse(localStorage.getItem("employeeData")) || [];
+
+ 
+  const duplicate = existingData.find(emp => emp.email === formData.email);
+  if (duplicate) {
+    alert("An employee with this email already exists.");
+    return;
+  }
+
+  const updatedData = [...existingData, formData];
+  localStorage.setItem("employeeData", JSON.stringify(updatedData));
+  console.log("Submitted Employee:", formData);
+
+  setFormData({
+    name: '',
+    email: '',
+    position: '',
+    department: '',
+    salary: '',
+    startDate: ''
+  });
+};
   return (
     <form className='employee-form' onSubmit={handleSubmit}>
         <h2>Employee Info</h2>
