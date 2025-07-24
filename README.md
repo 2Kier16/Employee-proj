@@ -1,30 +1,44 @@
 # 💼 Employee Management System
 
-This React project features a responsive, accessible employee form and dynamic employee list. Built as part of a multi-week assignment, it demonstrates form handling, component organization, styling, validation, and persistent data storage using `localStorage`.
+This React application is a fully responsive, accessible Employee Management System built for the INT304 final project. It allows users to enter, store, and display employee details in a sleek, card-style layout with personalized styling based on department and role.
+
+Built using ReactJS, CSS3, and `localStorage`, it showcases advanced form handling, visual design, state management with Hooks, and ethical user experience principles.
+
+---
 
 ## 🧩 Features
 
-- Fully controlled form using `useState`
-- Input fields for name, email, position, department, salary, and start date
+- Fully controlled form using `useState` and `useEffect`
+- Persistent storage with `localStorage`
 - Validation logic for:
   - Required fields
   - Positive salary values
   - No future start dates
-  - No duplicate emails
-  - Name field restricted to letters, spaces, hyphens, and apostrophes
-- Dynamic Employee List component that displays saved entries
-- Persistent data storage using `localStorage`
-- Responsive card-style layout using custom CSS
-- Keyboard and screen reader-friendly
-- Clean, accessible form structure
+  - Unique emails only
+  - Clean name input with limited characters
+- Department-based avatar colors
+- Fade-in animations and strong visual hierarchy
+- Semantic icons for email, department, salary, start date
+- Responsive grid layout and mobile optimization
+- Ethical accessibility practices and contrast compliance
 
-## 🚀 Getting Started
+---
 
-To run this project locally:
+## 🎯 Architecture Overview
+
+- React Hooks manage state
+- CSS3 Grid and Flexbox center layout and style components
+- Avatar class dynamically assigned per department
+- Optional Redux architecture planned for future scaling
+- Ready for integration with Python backend API or RESTful services
+
+---
+
+## 🔧 Setup
 
 ```bash
 git clone https://github.com/2Kier16/Employee-proj.git
-cd employee-management
+cd employee-proj
 npm install
 npm start
 
