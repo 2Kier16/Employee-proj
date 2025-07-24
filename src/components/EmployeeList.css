@@ -1,30 +1,132 @@
+/* Styles for the Employee List component */
+
 .employee-list {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 3rem auto;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
 }
 
 .employee-list h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.75rem;
   margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: #333;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
 }
 
-.employee-list ul {
-  list-style-type: none;
-  padding: 0;
+.employee-card {
+  background-color: #f5f7fa;
+  border: 1px solid #bbb;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  min-width: 340px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  animation: fadeIn 0.4s ease forwards;
+  opacity: 0;
 }
 
-.employee-list li {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 1rem;
-  margin-bottom: 0.75rem;
+.employee-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+/* Department themes */
+.avatar-sales { background-color: #0077cc; }
+.avatar-hr { background-color: #cc7700; }
+.avatar-tech { background-color: #339933; }
+.avatar-admin { background-color: #660099; }
+
+/* Info container */
+.employee-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Name, position, department styling */
+.employee-card strong {
+  color: #34495e;
+  font-size: 1.05rem;
+}
+
+.role-tag {
+  background-color: #cce2ff;
+  color: #003e75;
+  padding: 0.35rem 0.65rem;
   border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.status-badge {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 4px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.employee-card {
+  position: relative;
+}
+/* Icon line styles */
+.employee-detail {
+  font-size: 0.9rem;
+  color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.employee-list li strong {
-  color: #555;
+.employee-detail .icon {
+  font-size: 1rem;
+  color: #0077cc;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .employee-list {
+    padding: 1rem;
+  }
+
+  .employee-card {
+    padding: 1rem;
+    color: #1a1a1a;
+  }
 }
